@@ -1,6 +1,6 @@
 import styles from "./header.module.css";
 
-const Header = ({logo, navItems}) => {
+const Header = ({ logo, navItems }) => {
     return (
         <header className={styles.header}>
             <div className={styles.logo}>
@@ -8,7 +8,7 @@ const Header = ({logo, navItems}) => {
                 <span>🌟</span>
             </div>
             <nav className={styles.nav}>
-            {navItems.map((item, index) => (
+                {navItems.map((item, index) => (
                     <a href="#" key={index} className={item.active ? styles.active : ""}>
                         {item.name}
                     </a>
