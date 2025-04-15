@@ -43,7 +43,7 @@ npm run dev
 
 - **InteractionBar**: Componente que mostra a quantidade de interações que o meme possui.
 
-- **Footer**: O Footer possui, além das mídias sociais
+- **Footer**: O Footer possui, além das mídias sociais, uma navegação própria, os recursos do site, as informações sobre a MemeVerse e os termos e uso.
 
 # 🎨 Decisões de design tomadas
 
