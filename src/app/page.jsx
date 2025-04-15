@@ -2,6 +2,10 @@ import styles from "./page.module.css";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import Footer from "./components/Footer";
+import CreatorsSection from "./components/CreatorsSection";
+import CategoriesSection from "./components/CategoriesSection";
+import Feed from "./components/Feed";
+
 
 export default function Home() {
   // Array de dados dos memes para serem passados como props
@@ -189,86 +193,11 @@ export default function Home() {
           {/* FIM COMPONENTE: HeroSection */}
 
           {/* COMPONENTE: CategoriesSection */}
-          <section className={styles.categoriesSection}>
-            <h2 className={styles.sectionTitle}>Explore por Categorias</h2>
-            <div className={styles.categoriesGrid}>
-              {categories.map((category) => (
-                <div key={category.id} className={styles.categoryCard}>
-                  <span className={styles.categoryIcon}>{category.icon}</span>
-                  <h3 className={styles.categoryName}>{category.name}</h3>
-                  <span className={styles.categoryCount}>
-                    {category.count} memes
-                  </span>
-                </div>
-              ))}
-            </div>
-          </section>
+          <CategoriesSection categories={categories} />
           {/* FIM COMPONENTE: CategoriesSection */}
 
           {/* COMPONENTE: Feed */}
-          <section className={styles.feedSection}>
-            <div className={styles.feedHeader}>
-              <h2 className={styles.sectionTitle}>Memes Populares</h2>
-              <div className={styles.feedFilters}>
-                <button className={`${styles.filterButton} ${styles.active}`}>
-                  Recentes
-                </button>
-                <button className={styles.filterButton}>Mais curtidos</button>
-                <button className={styles.filterButton}>Mais comentados</button>
-              </div>
-            </div>
-
-            <div className={styles.feedGrid}>
-              {/* Aqui mapeamos os memes do array para criar múltiplos cards */}
-              {memes.map((meme) => (
-                // COMPONENTE: MemeCard
-                <div key={meme.id} className={styles.memeCard}>
-                  <div className={styles.memeCardHeader}>
-                    <div className={styles.memeAuthor}>
-                      <img src={meme.authorAvatar} alt={meme.author} />
-                      <span>{meme.author}</span>
-                    </div>
-                    <span className={styles.memeCategory}>{meme.category}</span>
-                  </div>
-                  <img
-                    src={meme.image}
-                    alt={meme.title}
-                    className={styles.memeImage}
-                  />
-                  <div className={styles.memeContent}>
-                    <h3 className={styles.memeTitle}>{meme.title}</h3>
-                    <p className={styles.memeDescription}>{meme.description}</p>
-
-                    {/* COMPONENTE: InteractionBar */}
-                    <div className={styles.interactionBar}>
-                      <div className={styles.interactionButton}>
-                        <span>👍</span>
-                        <span>{meme.likes}</span>
-                      </div>
-                      <div className={styles.interactionButton}>
-                        <span>💬</span>
-                        <span>{meme.comments}</span>
-                      </div>
-                      <div className={styles.interactionButton}>
-                        <span>🔄</span>
-                        <span>Share</span>
-                      </div>
-                      <div className={styles.interactionButton}>
-                        <span>🔖</span>
-                        <span>Save</span>
-                      </div>
-                    </div>
-                    {/* FIM COMPONENTE: InteractionBar */}
-                  </div>
-                </div>
-                // FIM COMPONENTE: MemeCard
-              ))}
-            </div>
-
-            <button className={styles.loadMoreButton}>
-              Carregar mais memes
-            </button>
-          </section>
+          < Feed memes={memes}/>
           {/* FIM COMPONENTE: Feed */}
 
           {/* COMPONENTE: FeaturedMemesSection */}
@@ -307,30 +236,7 @@ export default function Home() {
           {/* FIM COMPONENTE: FeaturedMemesSection */}
 
           {/* COMPONENTE: CreatorsSection */}
-          <section className={styles.creatorsSection}>
-            <h2 className={styles.sectionTitle}>Criadores em Destaque</h2>
-            <div className={styles.creatorsGrid}>
-              {topCreators.map((creator) => (
-                // COMPONENTE: CreatorCard
-                <div key={creator.id} className={styles.creatorCard}>
-                  <img
-                    src={creator.avatar}
-                    alt={creator.name}
-                    className={styles.creatorAvatar}
-                  />
-                  <h3 className={styles.creatorName}>{creator.name}</h3>
-                  <p className={styles.creatorBio}>{creator.bio}</p>
-                  <div className={styles.creatorStats}>
-                    <span className={styles.creatorFollowers}>
-                      {creator.followers} seguidores
-                    </span>
-                  </div>
-                  <button className={styles.followButton}>Seguir</button>
-                </div>
-                // FIM COMPONENTE: CreatorCard
-              ))}
-            </div>
-          </section>
+          <CreatorsSection topCreators={topCreators} />
           {/* FIM COMPONENTE: CreatorsSection */}
 
           {/* COMPONENTE: NewsletterSection */}
@@ -426,42 +332,42 @@ export default function Home() {
 
       {/* COMPONENTE: Footer */}
       <Footer footerData={[
-          {
-            title: "Navegação",
-            links: [
-              "Home",
-              "Trending",
-              "Create",
-              "Categories",
-              "Profile",
-            ],
-          },
-          {
-            title: "Recursos",
-            links: [
-              "Editor de Memes",
-              "Templates",
-              "API",
-              "Para Desenvolvedores",
-            ],
-          },
-          {
-            title: "Empresa",
-            links: [
-              "Sobre nós",
-              "Carreiras",
-              "Blog",
-              "Contato",
-            ],
-          },
-          {
-            title: "Legal",
-            links: [
-              "Termos de Uso",
-              "Privacidade",
-              "Cookies",
-            ],
-          },
+        {
+          title: "Navegação",
+          links: [
+            "Home",
+            "Trending",
+            "Create",
+            "Categories",
+            "Profile",
+          ],
+        },
+        {
+          title: "Recursos",
+          links: [
+            "Editor de Memes",
+            "Templates",
+            "API",
+            "Para Desenvolvedores",
+          ],
+        },
+        {
+          title: "Empresa",
+          links: [
+            "Sobre nós",
+            "Carreiras",
+            "Blog",
+            "Contato",
+          ],
+        },
+        {
+          title: "Legal",
+          links: [
+            "Termos de Uso",
+            "Privacidade",
+            "Cookies",
+          ],
+        },
       ]}
         socialLinks={[
           { icon: "📘" },
