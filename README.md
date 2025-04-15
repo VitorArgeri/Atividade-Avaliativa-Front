@@ -1,59 +1,52 @@
-# Template Front-End com Next.js
+# Instruções de Instalação e Execução
 
-Este repositório contém um template completo para o desenvolvimento de aplicações front-end utilizando **Next.js**. Ele foi projetado para ser uma base sólida para projetos modernos, com foco em desempenho, escalabilidade e boas práticas de desenvolvimento.
+Clone este repositório:
+```bash
+git clone https://github.com/VitorArgeri/Atividade-Avaliativa-Front
+```
 
----
+Instale o Node_Modules
+```bash
+npm install
+```
 
-## 📂 Estrutura do Projeto
+Execute o servidor
+```bash
+npm run dev
+```
 
-A estrutura do projeto foi organizada para facilitar a navegação e o desenvolvimento. Abaixo está uma visão geral dos principais diretórios e arquivos:
-emplate/ ├── .gitignore ├── eslint.config.mjs ├── jsconfig.json ├── next.config.mjs ├── package.json ├── README.md ├── public/ │ ├── favicon.ico │ └── imagens/ ├── src/ │ ├── app/ │ │ ├── globals.css │ │ ├── layout.jsx │ │ ├── page.jsx │ │ ├── page.module.css │ ├── components/ │ │ ├── Welcome/ │ │ │ ├── Welcome.jsx │ │ │ └── Welcome.module.css │ │ ├── Props/ │ │ │ ├── Props.jsx │ │ │ └── Props.module.css │ │ ├── Children/ │ │ │ ├── Children.jsx │ │ │ └── Children.module.css │ │ └── Dad/ │ │ ├── Dad.jsx │ │ └── Dad.module.css
+# Descrição dos Componentes Criados
 
-### 📁 Diretórios Principais
+**Header**
 
-- **`public/`**: Contém arquivos estáticos, como imagens, ícones e outros recursos que podem ser acessados diretamente pelo navegador.
-- **`src/app/`**: Diretório principal da aplicação, onde estão os arquivos de configuração, estilos globais e as páginas principais.
-- **`src/components/`**: Diretório que agrupa os componentes reutilizáveis, organizados por funcionalidade.
+**CategoriesSection**
 
----
+**CreatorCard**
 
-## 🛠️ Tecnologias Utilizadas
+**CreatorsSection**
 
-Este template foi construído utilizando as seguintes tecnologias e ferramentas:
+**HeroSection**
 
-- **[Next.js](https://nextjs.org/)**: Framework React para renderização no lado do servidor (SSR) e geração de sites estáticos (SSG).
-- **[React](https://reactjs.org/)**: Biblioteca JavaScript para construção de interfaces de usuário.
-- **CSS Modules**: Para estilização modular e escopada, garantindo que os estilos sejam aplicados apenas aos componentes desejados.
-- **ESLint**: Configurado para garantir a qualidade do código e seguir boas práticas.
-- **JavaScript (ES6+)**: Utilização de recursos modernos da linguagem para maior legibilidade e eficiência.
+**Sidebar**
 
----
+**EventCard**
 
-## 🚀 Funcionalidades do Template
+**NewsletterSection**
 
-Este template foi projetado para oferecer uma base sólida para o desenvolvimento de aplicações front-end. Algumas das principais funcionalidades incluem:
+**MemeCard**
 
-1. **Configuração Inicial Pronta**:
+**Feed**
 
-   - Configuração de ESLint para garantir a qualidade do código.
-   - Suporte a CSS Modules para estilização modular.
-   - Estrutura de diretórios organizada para facilitar a escalabilidade.
+**FeaturedMemeSection**
 
-2. **Componentes Reutilizáveis**:
+**FeaturedMemeCard**
 
-   - Componentes pré-configurados para reutilização em diferentes partes do projeto.
-   - Exemplos de componentes com propriedades (`Props`) e uso de `children`.
+**InteractionBar**
 
-3. **Estilização Modular**:
+**Footer**
 
-   - Cada componente possui seu próprio arquivo CSS Module, garantindo isolamento de estilos.
-
-4. **Aliases para Importação**:
-
-   - Configuração de aliases no arquivo `jsconfig.json` para facilitar a importação de arquivos e componentes.
-
-5. **Pronto para Produção**:
-   - Configuração otimizada para build de produção com Next.js.
-
----
-
+# Decisões de design tomadas
+Componentização
+Nomeação Clara
+Responsividade
+Organização por responsabilidade

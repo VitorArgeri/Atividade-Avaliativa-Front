@@ -1,14 +1,13 @@
 import styles from "./page.module.css";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
-import Footer from "./components/Footer";
-import CreatorsSection from "./components/CreatorsSection";
 import CategoriesSection from "./components/CategoriesSection";
 import Feed from "./components/Feed";
+import FeaturedMemeSection from "./components/FeaturedMemeSection";
+import CreatorsSection from "./components/CreatorsSection";
 import NewsletterSection from "./components/NewsletterSection";
 import Sidebar from "./components/Sidebar";
-import FeaturedMemeSection from "./components/FeaturedMemeSection";
-
+import Footer from "./components/Footer";
 
 export default function Home() {
   // Array de dados dos memes para serem passados como props
