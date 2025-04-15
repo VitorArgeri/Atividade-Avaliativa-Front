@@ -1,30 +1,32 @@
 import styles from "./sidebar.module.css";
-import EventCard from "../EventCard"; 
+import EventCard from "../EventCard";
 
-const Sidebar = ({events, premiumFeatures, popularTags}) => {
+const Sidebar = ({ premiumFeatures, popularTags, upcomingEvents }) => {
     return (
         <aside className={styles.sidebar}>
             <div className={styles.sidebarSection}>
                 <h3 className={styles.sidebarTitle}>Eventos Próximos</h3>
                 {upcomingEvents.map((event) => (
                     // COMPONENTE: EventCard
-                    <EventCard event={event}/>
+                    <EventCard event={event} />
                     // FIM COMPONENTE: EventCard
                 ))}
             </div>
 
             <div className={styles.sidebarSection}>
+
                 <h3 className={styles.sidebarTitle}>MemeVerse Premium</h3>
                 <div className={styles.premiumCard}>
                     <h4 className={styles.premiumTitle}>
                         Desbloqueie recursos exclusivos!
                     </h4>
-                    <ul className={styles.premiumFeatures}>
-                        <li>Sem anúncios</li>
-                        <li>Uploads ilimitados</li>
-                        <li>Ferramentas de edição avançadas</li>
-                        <li>Estatísticas detalhadas</li>
-                    </ul>
+                    {premiumFeatures.map((item, index) => (
+                        <ul key={index} className={styles.premiumFeatures}>
+                            <li className={styles.premiumFeature}>
+                                {item.feature}
+                            </li>
+                        </ul>
+                    ))}
                     <button className={styles.premiumButton}>
                         Experimentar Grátis
                     </button>
@@ -34,22 +36,12 @@ const Sidebar = ({events, premiumFeatures, popularTags}) => {
             <div className={styles.sidebarSection}>
                 <h3 className={styles.sidebarTitle}>Tags Populares</h3>
                 <div className={styles.tagCloud}>
-                    <span className={`${styles.tag} ${styles.tagLarge}`}>
-                        #memeday
-                    </span>
-                    <span className={styles.tag}>#programação</span>
-                    <span className={`${styles.tag} ${styles.tagMedium}`}>
-                        #humor
-                    </span>
-                    <span className={styles.tag}>#escola</span>
-                    <span className={`${styles.tag} ${styles.tagLarge}`}>
-                        #trabalhoremoto
-                    </span>
-                    <span className={styles.tag}>#segundafeira</span>
-                    <span className={`${styles.tag} ${styles.tagMedium}`}>
-                        #games
-                    </span>
-                    <span className={styles.tag}>#nofilter</span>
+
+                    {popularTags.map((item, index) => (
+                        <span key={index} className={`${styles.tag} ${index % 2 === 0 && index <= 7 ? styles.tagLarge : styles.tagMedium}`}>
+                            {item.tag}
+                        </span>
+                    ))}
                 </div>
             </div>
         </aside>
